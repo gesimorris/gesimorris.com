@@ -3,183 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Portfolio</title>
+    <title>Gesi Morris-Odubo | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
-    <nav class="navbar">
-        <a id="home" href="#welcome_message">☝🏾</a>
-        <a id="nav-text" href="#work-experience-section">Experience</a>
-        <a id="nav-text" href="#projects-section">Projects</a>
-        <a id="nav-text" href="#extra-section">Extras</a>
-        <a id="nav-text" href="#contact">Contact</a>
+    <!-- START SCREEN (Initial view) -->
+    <section id="start-screen" class="start-screen-section">
+        <div class="start-content">
+            <!-- Pixel character -->
+            <div class="pixel-character" id="pixel-character"></div>
+            
+            <!-- START button -->
+            <button id="start-button" class="pixel-start-button">
+                <span>▶ START</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- MAIN NAVIGATION (Hidden until START is clicked) -->
+    <section id="main-navigation" class="main-nav-section hidden">
+        <div class="nav-container">
+            <h1 class="pixel-name">GESI MORRIS-ODUBO</h1>
+            <p class="pixel-title">Full-Stack Developer | AI Integration</p>
+            
+            <div class="nav-menu">
+                <a href="#projects-section" class="nav-menu-item">
+                    <span class="nav-icon">🎮</span>
+                    <span class="nav-text">PROJECTS</span>
+                </a>
+                <a href="case-studies.html" class="nav-menu-item">
+                    <span class="nav-icon">📋</span>
+                    <span class="nav-text">CASE STUDIES</span>
+                </a>
+                <a href="#extra-section" class="nav-menu-item">
+                    <span class="nav-icon">⭐</span>
+                    <span class="nav-text">EXTRAS</span>
+                </a>
+                <a href="#contact" class="nav-menu-item">
+                    <span class="nav-icon">📧</span>
+                    <span class="nav-text">CONTACT</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STICKY NAV BAR (appears after scrolling past main navigation) -->
+    <nav class="navbar pixel-nav" id="sticky-nav">
+        <div class="nav-progress">
+            <span class="progress-label">PROGRESS:</span>
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <span id="progress-percentage">0%</span>
+        </div>
+        <div class="nav-links">
+            <a href="#projects-section">PROJECTS</a>
+            <a href="case-studies.html">CASE STUDIES</a>
+            <a href="#extra-section">EXTRAS</a>
+            <a href="#contact">CONTACT</a>
+        </div>
     </nav>
 
-    <section id="welcome_message" class="section">
-        <img id="profile_pic" src="PP.jpg" alt="Profile Picture">
-        <h1 id="name">Hey, I'm <span id="my_name">Gesi Morris-Odubo.</span> This is where you can find what I'm working on.</h1>
-    </section>
-
-    <section id="work-experience-section" class="section">
-        <h2 class="page_title">My Experience</h2>
-        
-        <div class="job-list-container"> 
-            <div class="job-card">
-                <div class="card-inner">
-                    
-                    <div class="card-front">
-                        <img src="c&w.png" alt="Company Name Logo">
-                        <h4>Guest Service Representative</h4>
-                        <p class="job-dates">May 2025 - Present</p>
-                        <p class="job-location">Aberdeen Mall, Kamloops</p>
-                    </div>
-                    
-                    <div class="card-back">
-                        <ul>
-                            <li>Conduct daily UX/content audits; verifying website integrity.</li>
-                            <li>Provide Tier 1 support for customer procedural and directional issues.</li>
-                            <li>Manage transactions (gift cards, bus passes) using POS systems.</li>
-                            <li>Resolve high-volume customer complaints and system friction points.</li>
-                        </ul>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="job-card">
-                <div class="card-inner">  
-                    <div class="card-front">
-                        <img src="hbc.png" alt="Company Name Logo">
-                        <h4>Sales Associate & Cash Office Admin</h4>
-                        <p class="job-dates">May 2023 - May 2025</p>
-                        <p class="job-location">Aberdeen Mall, Kamloops</p>
-                    </div>    
-                    <div class="card-back">
-                        <ul>
-                            <li>Maintained high-level customer service and productivity during store liquidation and staff disruptions</li>
-                            <li>Daily auditing and closing of POS systems, ensuring 100% transactional balance for high-volume cash handling.</li>
-                            <li>Managed daily cash handling and organized secure preparation of funds for Brinks collection.</li>
-                            <li>Handled customer complaints regarding store closures, mitigating friction and maintaining brand image under pressure.</li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="job-card">
-                <div class="card-inner">  
-                    <div class="card-front">
-                        <img src="oldnavy.jpg" alt="Company Name Logo">
-                        <h4>Sales Associate</h4>
-                        <p class="job-dates">June 2022 - Dec 2022</p>
-                        <p class="job-location">Aberdeen Mall, Kamloops</p>
-                    </div>    
-                    <div class="card-back">
-                        <ul>
-                            <li>Served as the primary point of contact for routine customer needs and product inquiries.</li>
-                            <li>Managed restocking and merchandising tasks while prioritizing a clean, organized, and streamlined operational environmen</li>
-                            <li>Processed all sales, returns, and exchanges using high-volume POS systems.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>            
-            <div class="job-card">
-                <div class="card-inner">  
-                    <div class="card-front">
-                        <img src="md.png" alt="Company Name Logo">
-                        <h4>Digital Marketing Intern</h4>
-                        <p class="job-dates">Sep 2021 - Dec 2021</p>
-                        <p class="job-location">Deira, Dubai</p>
-                    </div>    
-                    <div class="card-back">
-                        <ul>
-                            <li>Developed and executed strategies for online presence optimization across key social media platforms.</li>
-                            <li>Interpreted user engagement data to inform content creation and improve overall digital outreach performance.</li>
-                            <li>Designed and managed high-impact social media content to drive user traffic and interaction.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="job-card">
-                <div class="card-inner">  
-                    <div class="card-front">
-                        <img src="ua.png" alt="Company Name Logo">
-                        <h4>Track and Field Coach</h4>
-                        <p class="job-dates">Jul 2020 - Aug 2020</p>
-                        <p class="job-location">Sports City, Dubai</p>
-                    </div>    
-                    <div class="card-back">
-                        <ul>
-                            <li>Volunteered to coordinate and execute training programs for athletes (ages 8-13), translating complex technique into age-appropriate lessons.</li>
-                            <li>Developed and refined weekly lesson plans, including dynamic warm-ups and skill-focused drills with safety being the main priority.</li>
-                            <li>Managed group dynamics and communication to foster a positive and inclusive team environment.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            </div>
-    </section>
-
+    <!-- PROJECTS SECTION -->
     <section id="projects-section">
-        <h2 class="page_title2">My Projects</h2>
-        <h3 class="section-subtitle">These are some projects I've worked on. Click on a project to see more details!</h3>
+        <h2 class="page_title">MY PROJECTS</h2>
+        <h3 class="section-subtitle">Navigate through my work</h3>
         
-        <div class="project-grid-container">
-
-            <a class="project-link" href="Hardware Diagnostics_ POST Failure Isolation using Bottom-Up Methodology.pdf" download="Hardware Diagnostics_ POST Failure Isolation using Bottom-Up Methodology.pdf" target="_blank">
-                <div class="project-card" data-project-id="links-app">
-                    <img id="project-image" src="asus.png" alt="Project Image">
-                    <h3>ASUS ROG G551J Hardware Diagnostics</h3>
-                    <p>POST Failure Isolation using Bottom-Up Methodology.</p>
+        <div class="projects-carousel-container">
+            <button class="carousel-button prev" id="prev-btn">◀</button>
+            
+            <div class="projects-carousel" id="projects-carousel">
+                
+                <!-- OpsReady AI Chatbot - NEW PROJECT -->
+                <div class="project-link" data-project="opsready">
+                    <div class="project-card">
+                        <img class="project-image" src="opsready-preview.png" alt="OpsReady AI Chatbot">
+                        <h3>OpsReady AI Chatbot</h3>
+                        <p>AI-powered operations assistant with 14+ tool integrations</p>
+                    </div>
                 </div>
+                
+                <!-- ASUS Hardware Diagnostics -->
+                <a class="project-link" data-project="asus">
+                    <div class="project-card">
+                        <img class="project-image" src="asus.png" alt="ASUS Hardware Diagnostics">
+                        <h3>ASUS ROG G551J Hardware Diagnostics</h3>
+                        <p>POST Failure Isolation using Bottom-Up Methodology</p>
+                    </div>
                 </a>
-            <a class="project-link" href="https://github.com/gesimorris/Lofi-Music-Generator/blob/main/Gesi%20T00686038%20Project%20Proposal.pdf" target="_blank">
-                <div class="project-card" data-project-id="lab-network">
-                    <img id="project-image" src="ailofi.png" alt="Project Image">
-                    <h3>FeelScape</h3>
-                    <p>Generate chill beats based on the mood of any picture you show it.</p>
+                
+                <!-- FeelScape -->
+                <div class="project-link" data-project="feelscape">
+                    <div class="project-card">
+                        <img class="project-image" src="ailofi.png" alt="FeelScape">
+                        <h3>FeelScape</h3>
+                        <p>Generate chill beats based on the mood of any picture you show it</p>
+                    </div>
                 </div>
-            </a>
-            <a class="project-link" href="https://github.com/gesimorris/Personal-Finance-Tracker/blob/main/README.md" target="_blank">
-                <div class="project-card" data-project-id="cleanup-script">
-                    <img id="project-image" src="financetracker.jpg" alt="Project Image">
-                    <h3>BudgetFlow</h3>
-                    <p>An app for real-time finance tracking and simple budgeting.</p>
+                
+                <!-- BudgetFlow -->
+                <div class="project-link" data-project="budgetflow">
+                    <div class="project-card">
+                        <img class="project-image" src="financetracker.jpg" alt="BudgetFlow">
+                        <h3>BudgetFlow</h3>
+                        <p>An app for real-time finance tracking and simple budgeting</p>
+                    </div>
                 </div>
-            </a>
-            <a class="project-link" href="https://youtube.com/shorts/E1wnRiF5-eI?feature=share" target="_blank">
-                <div class="project-card" data-project-id="med-app">
-                    <img id="project-image" src="dosewise.jpg" alt="Project Image">
-                    <h3>DoseWise</h3>
-                    <p>Mindful dosing. Reliable tracking.</p>
+                
+                <!-- DoseWise -->
+                <div class="project-link" data-project="dosewise">
+                    <div class="project-card">
+                        <img class="project-image" src="dosewise.jpg" alt="DoseWise">
+                        <h3>DoseWise</h3>
+                        <p>Mindful dosing. Reliable tracking.</p>
+                    </div>
                 </div>
-            </a>
-            <a class="project-link">
-                <div class="project-card" data-project-id="construction">
-                    <img id="project-image" src="links.png" alt="Project Image">
-                    <h3>Links</h3>
-                    <p>Aggregating and visualizing local events for easy discovery.</p>
+                
+                <!-- Links -->
+                <div class="project-link" data-project="links">
+                    <div class="project-card">
+                        <img class="project-image" src="links.png" alt="Links">
+                        <h3>Links</h3>
+                        <p>Aggregating and visualizing local events for easy discovery</p>
+                    </div>
                 </div>
-            </a>
+            </div>
+            
+            <button class="carousel-button next" id="next-btn">▶</button>
         </div>
         
+        <div class="carousel-indicators" id="carousel-indicators"></div>
+        
+        <!-- Project Details Modal -->
         <div id="project-modal" class="modal">
             <div class="modal-content">
                 <span class="close-button">&times;</span>
                 <h2 id="modal-title"></h2>
-                <div id="modal-content-details">
-                    </div>
+                <div id="modal-description"></div>
+                <div id="modal-tech-stack"></div>
+                <div id="modal-links" class="modal-links"></div>
             </div>
         </div>
-    
     </section>
+
+    <!-- EXTRAS SECTION -->
     <section id="extra-section">
-        <h2 class="page_title3">Extras</h2>
-        <h3 class="extra-subheading">A list of some videos and writings of my interests and certifications I've collected over the years! Hover over a specific certification to see more details. </h3>
+        <h2 class="page_title">EXTRAS</h2>
+        <h3 class="extra-subheading">Blog posts and certifications</h3>
 
         <div class="extra-content">
-
             <div class="extra card top-activity-card"> 
                 <div class="side-by-side">
                     <div id="blog-posts-container" class="blog-preview-item">
@@ -193,24 +169,24 @@
                 <ul class="certification_list">
                     <li class="cert-card-small">
                         <img src="udemy.png" alt="Udemy">
-                        
                         <div class="cert-details-overlay">
-                            <p id="cert-status-small">Completed</p>
-                            <h4 id="card-body" class="cert-title-small">Python for Data Science and Machine Learning</h4>
+                            <p class="cert-status-small">Completed</p>
+                            <h4 class="cert-title-small">Python for Data Science and Machine Learning</h4>
                             <div class="certification_link">
                                 <a href="https://www.linkedin.com/in/gesimorris/overlay/1718798491507/single-media-viewer/?profileId=ACoAADd_hkoBuiovEB6vTZLrTH0CLAQo3mbgUdU" target="_blank" rel="noopener noreferrer">More Information</a>
                             </div>
                         </div>
-                        </li>
+                    </li>
                 </ul>
             </div>
+        </div>
     </section>
 
-
+    <!-- CONTACT SECTION -->
     <section id="contact" class="section">
-        <h2 class="page_title2">Contact Me</h2>
+        <h2 class="page_title">CONTACT ME</h2>
         <div class="contact_content">
-             <p class="contact-subheading">I'm always open to discussing new opportunities, projects, or collaborations. Feel free to reach out!</p>
+             <p class="contact-subheading">Open to new opportunities, projects, and collaborations</p>
              <div class="form-container">
                 <form id="contact-form" action="https://formspree.io/f/mandgzjr" method="POST">
                     <div class="form-group">
@@ -225,197 +201,18 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="submit-button">Send Message</button>
+                    <button type="submit" class="submit-button pixel-button-small">SEND MESSAGE</button>
                 </form>
              </div>
         </div>
     </section>
+
+    <!-- Social Links -->
     <div class="social-links">
         <a href="https://www.linkedin.com/in/gesimorris/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/gesimorris" target="_blank" aria-label="Github Profile"><i class="fab fa-github"></i></a>
     </div>
 
-    <script>
-        // 1. Get references to the modal elements
-    const modal = document.getElementById('project-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalContentDetails = document.getElementById('modal-content-details');
-    const closeButton = document.querySelector('.close-button');
-
-// 2. Get all project items
-    const projectItems = document.querySelectorAll('[data-project-id="construction"]');
-
-// 3. Define the content for the "Under Construction" message
-    const underConstructionHTML = `
-    <p>Thank you for your interest! This project is currently under construction.</p>
-    <p>I am actively working on it and will update this section soon. Please check back later!</p>
-`;
-
-/**
- * Opens the modal with the specified project title and the construction message.
- * @param {string} title The title of the project clicked.
- */
-    function showUnderConstruction(title) {
-    // Set the title and content
-    modalTitle.textContent = title;
-    modalContentDetails.innerHTML = underConstructionHTML;
-    
-    // Display the modal
-    modal.style.display = 'block';
-    }
-
-// 4. Attach event listeners to all project items
-    projectItems.forEach(item => {
-        item.addEventListener('click', () => {
-        // Get the project name to use in the modal title
-        const projectTitle = item.querySelector('h3').textContent;
-        showUnderConstruction(projectTitle);
-    });
-    });
-
-// 5. Setup functions to close the modal
-
-// When the user clicks on (x), close the modal
-closeButton.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
-
-// When the user clicks anywhere outside of the modal, close it
-window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
-});
-        // GSAP Animations for Welcome Message
-        gsap.from("#Hi", {opacity: 0, y: -30, duration: 0.8, delay: 0.5});
-        gsap.from("#name", {opacity: 0, y: -30, duration: 0.8, delay: 0.7});
-        gsap.from("#title", {opacity: 0, y: -30, duration: 0.8, delay: 0.9});
-        gsap.from(".social-links", {opacity: 0, y: -30, duration: 0.8, delay: 1.0});
-        gsap.from(".welcome-buttons", {opacity: 0, y: -30, duration: 0.8, delay: 1.1});
-        gsap.from("#welcome_message .blog-preview", {opacity: 0, scale: 0.9, duration: 1, delay: 0.4});
-
-        // Blog posts
-        document.addEventListener('DOMContentLoaded', () => {
-    const blogContainer = document.getElementById('blog-posts-container');
-    const host = `gesilogbook.hashnode.dev`;
-
-    // 1. UPDATED QUERY: Increase 'first' to retrieve multiple posts (e.g., 10)
-    const GET_ALL_POSTS_QUERY = `
-    query GetAllPosts($host: String!) {
-        publication(host: $host) {
-            posts(first: 10) { 
-                edges {
-                    node {
-                        title
-                        brief
-                        slug
-                        coverImage {
-                            url
-                        }
-                    }
-                }
-            }
-        }
-    }
-`;
-    fetch('https://gql.hashnode.com/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            // Use the new query
-            query: GET_ALL_POSTS_QUERY, 
-            variables: { host: 'gesilogbook.hashnode.dev' }
-        }),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP Error: ${response.status} - ${response.statusText}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Access the array of posts
-        const edges = data?.data?.publication?.posts?.edges;
-        
-        // Clear the container before adding new posts
-        blogContainer.innerHTML = ''; 
-
-        if (edges && edges.length > 0) {
-            
-            // 2. NEW LOGIC: Use a loop to iterate over all returned posts
-            edges.forEach(edge => {
-                const post = edge.node; // The post object is inside 'node'
-
-                const postElement = document.createElement('div');
-                postElement.classList.add('blog-post-preview');
-
-                const imageUrl = post.coverImage?.url || 'fallback-image-url.png'; 
-                
-                // 3. GENERATE HTML for *each* post
-                postElement.innerHTML = `
-                    <img src="${imageUrl}" alt="${post.title}" class="post-cover-image">
-                    <h3>${post.title}</h3>
-                    <p>${post.brief}</p>
-                    <a href="https://${host}/${post.slug}" target="_blank" rel="noopener noreferrer">Read More</a>
-                `;
-                
-                // Append the newly created post element to the container
-                blogContainer.appendChild(postElement);
-            });
-
-        } else {
-            blogContainer.innerHTML = '<p>My latest blog post will appear here soon!</p>';
-        }
-    })
-    .catch(error => {
-        console.error('Error fetching blog posts:', error);
-        blogContainer.innerHTML = `<p style="color: #ffcccc;"><strong>Error:</strong> Failed to load posts (${error.message}).</p>`;
-    });
-});
-
-        // Contact Me Button - Scroll to contact section
-        document.getElementById("contactButton").addEventListener("click", () => {
-            document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-        });
-
-        // GSAP ScrollTrigger Animations for Sections
-        gsap.registerPlugin(ScrollTrigger);
-
-        document.querySelectorAll(".section").forEach((section) => {
-             // Skip animation for the welcome section
-            if (section.id === 'welcome_message') return;
-
-            const pageTitle = section.querySelector('.page_title');
-            // Corrected and more specific content selectors
-            const contentElements = section.querySelectorAll('.certifications_list li, .skills_list li, .skill-card, .project-item, .contact_content > *');
-
-            if(pageTitle) {
-                gsap.from(pageTitle, {
-                    opacity: 0,
-                    y: 30,
-                    duration: 0.6,
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "top 85%",
-                        toggleActions: "play none none reverse"
-                    }
-                });
-            }
-
-            if(contentElements.length > 0) {
-                gsap.from(contentElements, {
-                    opacity: 0,
-                    y: 30,
-                    duration: 0.5,
-                    stagger: 0.1,
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "top 80%",
-                        toggleActions: "play none none reverse"
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
