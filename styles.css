@@ -923,6 +923,22 @@ body.no-scroll section:not(#start-screen) {
     color: var(--accent-bright);
 }
 
+.case-study-button {
+    display: inline-block;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    padding: 12px 24px;
+    background-color: var(--accent-light);
+    color: var(--bg-dark);
+    border: 3px solid var(--bg-dark);
+    box-shadow: 4px 4px 0 var(--shadow);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .niche-section {
     padding: 80px 40px;
     max-width: 1200px;
