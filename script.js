@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const GET_ALL_POSTS_QUERY = `
         query GetAllPosts($host: String!) {
             publication(host: $host) {
-                posts(first: 10) { 
+                posts(first: 3) { 
                     edges {
                         node {
                             title
