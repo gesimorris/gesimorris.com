@@ -142,20 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <strong>Status:</strong> Currently under construction. Check back soon for updates!`,
             techStack: ['In Development'],
             links: []
-        },
-        asus: {
-            title: 'ASUS ROG G551J Hardware Diagnostics',
-            description: `Comprehensive hardware diagnostics for ASUS ROG G551J laptop.
-
-            <strong>Features:</strong>
-            • CPU, GPU, RAM, and storage health monitoring`,
-            
-            techStack: ['Hardware Diagnostics', 'System Monitoring'],
-            links: [
-                { text: '📂 Blog', url: 'https://gesilogbook.hashnode.dev/creation-science-documentary', type: 'blog' }
-            ]
         }
-
 
     };
 
