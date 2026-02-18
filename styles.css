@@ -168,6 +168,7 @@ body.no-scroll {
 .main-nav-section {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: var(--bg-dark);
@@ -202,9 +203,50 @@ body.no-scroll {
 .pixel-title {
     font-size: 14px;
     color: var(--accent-bright);
-    margin-bottom: 80px;
+    margin-bottom: 10px;
     letter-spacing: 1px;
 }
+
+.pixel-dev {
+    font-size: 20px;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.tech-stack-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .specific-language {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #eaeaea;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+  }
+  
+  .specific-language i {
+    font-size: 18px;
+  }
+  
+  .specific-language:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  
 
 .nav-menu {
     display: flex;
@@ -342,6 +384,22 @@ body.no-scroll section:not(#start-screen) {
     margin-bottom: 20px;
     text-shadow: 4px 4px 0 var(--shadow);
     letter-spacing: 3px;
+}
+
+.social-links1 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.social-links1 a {
+    color: var(--accent-light);
+    font-size: 32px;
+    transition: all 0.2s ease;
+}
+
+.social-links1 a:hover {
+    color: var(--accent-bright);
+    transform: scale(1.2);
 }
 
 .section-subtitle,
@@ -493,11 +551,13 @@ body.no-scroll section:not(#start-screen) {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: auto;   
+    padding-top: 40px;  
 }
 
 .modal-content {
     background-color: var(--bg-medium);
-    margin: 10% auto;
+    margin: 3% auto;
     padding: 40px;
     border: 4px solid var(--accent-light);
     width: 80%;

@@ -95,15 +95,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 { text: '📹 Original Demo', url: 'demo.mp4' , type: 'video' }
             ]
         },
-        feelscape: {
+        feelscape: { 
             title: 'FeelScape',
             description: `AI-powered lo-fi music generator that creates chill beats based on image mood analysis.
             
-            <strong>Features:</strong>
+            <strong>Key Features:</strong>
             • Image mood detection
             • Dynamic beat generation
             • Real-time audio synthesis`,
-            techStack: ['Python', 'TensorFlow', 'Audio Processing'],
+            techStack: ['Python', 'FastAPI', 'FluidSynth', 'Deep Learning'],
             links: [
                 { text: '📂 GitHub', url: 'https://github.com/gesimorris/Lofi-Music-Generator/blob/main/Gesi%20T00686038%20Project%20Proposal.pdf', type: 'github' }
             ]
@@ -112,12 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'BudgetFlow',
             description: `Personal finance tracking application with real-time budget monitoring and expense categorization.
             
-            <strong>Features:</strong>
-            • Real-time transaction tracking
+            <strong>Key Features:</strong>
             • Budget allocation and monitoring
+            • Income categorization
             • Expense categorization
             • Financial insights dashboard`,
-            techStack: ['React', 'Node.js', 'PostgreSQL', 'Chart.js'],
+            image: `<img width="350" height="250" alt="image" src="https://github.com/user-attachments/assets/4e3a089a-0d5e-4f63-bb82-631a44692f92" />`,
+            techStack: ['PHP', 'AJAX', 'HTML', 'CSS', 'JavaScript', 'MySQL'],
             links: [
                 { text: '📂 GitHub', url: 'https://github.com/gesimorris/Personal-Finance-Tracker/blob/main/README.md', type: 'github' }
             ]
@@ -130,9 +131,10 @@ document.addEventListener('DOMContentLoaded', () => {
             • Medication schedule tracking
             • Dose reminders
             • Health metrics logging`,
-            techStack: ['Mobile Development', 'UI/UX Design'],
+            techStack: ['React Native', 'Expo', 'Firebase', 'React'],
             links: [
-                { text: '📹 Demo Video', url: 'https://youtube.com/shorts/E1wnRiF5-eI?feature=share', type: 'video' }
+                { text: '📹 Demo Video', url: 'https://youtube.com/shorts/E1wnRiF5-eI?feature=share', type: 'video' },
+                { text: '📂 Github', url: 'https://github.com/gesimorris/Medication-Reminder', type: 'github' }
             ]
         },
         links: {
@@ -141,7 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             <strong>Status:</strong> Currently under construction. Check back soon for updates!`,
             techStack: ['In Development'],
-            links: []
+            links: [
+                { text: '📂 Github', url: 'https://github.com/gesimorris/Links', type: 'github' }
+            ]
         }
 
     };
@@ -153,6 +157,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         modalTitle.textContent = project.title;
         modalDescription.innerHTML = `<p>${project.description.replace(/\n/g, '<br>')}</p>`;
+        
+        if (project.image) {
+            modalDescription.innerHTML += `<div style="margin-top: 15px;">${project.image}</div>`;
+        }
         
         // Tech stack
         if (project.techStack && project.techStack.length > 0) {
